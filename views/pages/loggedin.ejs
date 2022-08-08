@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <title> ToDo List </title>
+    <link rel="stylesheet" href="/static/stylesheets/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+    <div class="Login">
+        <p id = "p2">Logged in as: <%= username%></p>
+        <form id = "form2" action="/logout" method="POST" class="Logout">
+            <button type="submit">Logout</button>
+        </form>
+        <form action="/auth" method="POST" class="Login"> 
+            <label for="username">
+                <i class="fas fa-users"></i>
+            </label>
+            <input type="text" name="username" placeholder="Username" id="username" required>
+            <label for="password">
+                <i class="fas fa-lock"></i>
+            </label>
+            <input type="password" name="password" placeholder="Password" id="password" required>
+			<input type="submit" value="Login">
+        </form>
+        <form action="/createUser" method="POST" class="Create_Login">
+            <label for="username">
+                <i class="fas fa-users"></i>
+            </label>
+            <input type="text" name="username" placeholder="Username" id="username" required></input>
+            <label for="password">
+                <i class="fas fa-lock"></i>
+            </label>
+            <input type="password" name="password" placeholder="Password" id="password" required></input>
+			<input type="submit" value="Create Login"></input>
+        </form>
+    </div>
+    <h1 class="Title"> ToDo List </h1>
+    <div class="Todo_Block">
+        <form action="/loggedin" method="POST" class="Filter_Todo_List">
+            <select name="todo_filter" id = "todo_filter" class="Todo_Filter">
+                <option value = "Select Filter" Selected> Select Filter </option>
+                <option value = "urgency"> Urgency </option>
+            </select>
+            <button type="submit"> Add Filter </button>
+        </form>
+        <form action="/loggedin" method="POST" class="Todo_List_Buttons"> 
+            <input type="text" name="activity" placeholder="Activity Description" class="Task_Input">
+            <select name="urgency" id="urgency">
+                <optgroup label = "Urgency">
+                <option value = "Low"> Low </option>
+                <option value = "Medium"> Medium </option>
+                <option value="High"> High </option>
+                </optgroup>
+            </select>
+            <select name="subject" id="subject">
+                <optgroup label = "Type of Activity">
+                <option value = "Sport"> Sport </option>
+                <option value = "Business"> Business </option>
+                <option value = "Health"> Health </option>
+                <option value = "Food"> Dinner/Lunch </option>
+                </optgroup>
+            </select>
+            <button type="submit"> Add Task </button> 
+        </form>
+        <table class="Todo_Table">
+            <thead>
+                <tr>
+                    <th>Activity Description</th><th>Urgency</th><th>Type of Activity</th><th>User</th><th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% todoDataList.forEach(item => { %>
+                        <tr class = "Todo_Row">
+                            <td><%= item.activityDescription%></td>
+                            <td><%= item.urgency%></td>
+                            <td><%= item.activityType%></td> 
+                            <td><%= item.username%></td>
+                            <td>
+                                <% if(username === item.username){ %>
+                                    <a href="/edit/<%= item._id %>" class="Edit">
+                                        <span class="fas fa-edit"></span>
+                                    </a>
+                                    <a href="/remove/<%= item._id %>" class="Remove">
+                                        <span class="fas fa-times"></span>
+                                    </a>
+                                <% } %>
+                            </td>
+                        </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

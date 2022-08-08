@@ -1,0 +1,67 @@
+body{
+    background-color: #d9fffe;
+    font-family: sans-serif;
+}
+
+#p2{
+    display:inline;
+}
+
+#form2{
+    display:inline;
+}
+
+.Login{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.Todo_Table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.17);
+}
+
+.Todo_Table thead tr{
+    font-size: 18px;
+    background-color: #4cd6e7;
+    color: #ffffff;
+    text-align: left;
+}
+
+.Todo_Table th,
+.Todo_Table td{
+    padding: 12px 15px;
+}
+
+.Todo_Table tbody tr {
+    font-size: 13x;
+    border-bottom: 1px solid #dddddd;
+}
+
+.Todo_Table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.Todo_Block select {
+    background-color: #4cd6e7;
+  }
+
+.Task_Input{
+    background-color: #d9fffe;
+}
+
+h1{
+    font-family: Arial;
+    text-align: center;
+}
+
+.Todo_Block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
