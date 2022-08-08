@@ -7,6 +7,10 @@ const User = require("./models/User")
 const session = require("express-session");
 const { request, response } = require("express");
 dotenv.config();
+// Test Login
+console.log("hi");
+// Username: DarthVader
+// Password: Starwars
 
 // Variables that contain code to filter Query Documents in the MongoDB database
 var filterType = {
