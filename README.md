@@ -11,4 +11,5 @@ To Run The Application:
       5. Try logging into an existing user
             - Username: DarthVader
             - Password: Starwars
+      6. Or view images of the application working in the images folder
       
