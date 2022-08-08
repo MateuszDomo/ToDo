@@ -8,4 +8,7 @@ To Run The Application:
             - npm install --save express mongoose ejs dotenv express-session
             - npm install --save-dev nodemon
       4. Run "http://localhost:3000/" in your web  browser
+      5. Try logging into an existing user
+            - Username: DarthVader
+            - Password: Starwars
       
