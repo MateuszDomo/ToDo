@@ -8,7 +8,7 @@ const session = require("express-session");
 const { request, response } = require("express");
 dotenv.config();
 // Test Login
-console.log("hi");
+
 // Username: DarthVader
 // Password: Starwars
 
